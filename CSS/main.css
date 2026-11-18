@@ -1,0 +1,589 @@
+/*****? Global Styles *****/
+@font-face {
+  font-family: "Days One";
+  src: url(../assets/fonts/Days_One/DaysOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Chakra Petch";
+  src: url(../assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf);
+}
+
+:root {
+  --main-color: #cdfe1c;
+}
+
+body {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Days One", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-color {
+  color: #cdfe1c;
+}
+
+/*****? End Global Styles *****/
+
+/*****? Navbar Styles *****/
+
+.my-nav {
+  background-color: #0b0e13;
+  padding: 15px;
+}
+.my-nav .navbar-brand {
+  color: var(--main-color);
+}
+
+.my-nav .navbar-nav .nav-item {
+  margin-right: 20px;
+}
+
+.my-nav .navbar-nav a.nav-link {
+  color: white;
+  padding-inline: 0px;
+  position: relative;
+}
+.my-nav .navbar-nav a.nav-link.active {
+  color: var(--main-color);
+}
+.my-nav .navbar-nav a.nav-link.active::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.my-nav .navbar-nav a.nav-link::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s;
+}
+.my-nav .navbar-nav a.nav-link:after:hover::after {
+  width: 100%;
+}
+
+/*****? End Navbar Styles *****/
+
+/*****? Header Styles *****/
+.header {
+  height: 100vh;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+    url(../assets/images/hero-bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.header-box h1 {
+  color: #fff;
+}
+.header-box h1 span {
+  color: #cdfe1c;
+}
+.header-box p {
+  color: #fff;
+}
+.hero-image {
+  width: 100%;
+  display: block;
+  border-radius: 25px;
+  border: 3px solid #cdfe1c;
+  margin-top: 40px;
+  background: linear-gradient(var(--accent), var(--green));
+}
+
+.hero-image-wrap {
+  position: relative;
+}
+
+.badge {
+  background-color: #0b0e13;
+  position: absolute;
+  left: -30px;
+  bottom: -30px;
+  padding: 24px 32px 24px 28px;
+  border: 1px solid #262c38;
+  border-radius: 12px;
+}
+.badge i {
+  color: #c8ff1a;
+  font-size: 1.7rem;
+}
+
+.badge small {
+  color: #9aa4b2;
+  font-size: 0.9rem;
+}
+.badge strong {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+:root {
+  --btn-shadow: 1px 1px 25px 10px rgba(255, 255, 255, 0.5);
+  --btn-text-color: #f4f4f4;
+  --shine-degree: 120deg;
+  --shine-color: var(--main-color);
+  --shine-effect: linear-gradient(
+    var(--shine-degree),
+    transparent,
+    var(--shine-color),
+    transparent
+  );
+  --shine-transition: all 0.65s ease-in-out;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  border: var(--main-color);
+  color: #000;
+  background: var(--main-color);
+}
+
+/* شريط اللمعة */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--shine-effect);
+}
+
+.btn-hover::before {
+  left: -100%;
+  transition: var(--shine-transition);
+}
+
+.btn-hover:hover {
+  box-shadow: var(--btn-shadow);
+}
+
+.btn-hover:hover::before {
+  left: 100%;
+}
+
+/*****? End Header Styles *****/
+
+/*****? Latest Games Styles *****/
+.games {
+  background-color: #0b0e13;
+  color: #fff;
+}
+.games .title {
+  text-align: center;
+}
+
+.games .title p {
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 3.2px;
+  color: #c8ff1a;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.games .title p::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--main-color), transparent);
+  position: absolute;
+  top: 50%;
+  right: -110px;
+  transform: translateY(-50%);
+}
+
+.games .title p::before {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to left, var(--main-color), transparent);
+  position: absolute;
+  top: 50%;
+  left: -110px;
+  transform: translateY(-50%);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.card:hover img {
+  transform: scale(1.07);
+}
+.card:hover .card-body,
+.card:focus-within {
+  opacity: 1;
+  transform: none;
+}
+
+.card-body {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 60px 24px 22px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92), transparent);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.35s,
+    transform 0.35s;
+}
+
+.card-body a {
+  background-color: #394d21;
+}
+
+.card-body i.link-i {
+  color: #c8ff1a;
+}
+
+.games .carousel .carousel-control-prev,
+.games .carousel .carousel-control-next {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+/*****? End Latest Games Styles *****/
+
+/*****? lates Styles *****/
+
+h2 .scs {
+  color: #c8ff1a;
+}
+
+.svc {
+  background-color: #1a1a1a;
+  border: 1px solid #cdfe1c;
+  border-radius: 15px;
+  flex-direction: column;
+  gap: 22px;
+  padding: 24px;
+  text-align: center;
+  transition:
+    transform 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.svc:hover{
+    transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 14px 34px rgba(200, 255, 26, 0.12);
+}
+.svc-ic {
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  background-color: var(--main-color);
+  background: var(--main-color);
+  color: var(--main-color);
+  display: grid;
+  place-items: center;
+  font-size: 2.1rem;
+}
+
+
+.svc h3 {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.svc , .svc-img {
+  height: 100%;
+  border-radius: 20px;
+}
+.svc img{
+  padding: 0;
+  border: 0;
+   overflow: hidden;
+}
+
+.svc-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 1s 1s;
+  object-fit: cover;
+  
+   
+}
+.svc-img:hover img {
+  transform: scale(1.5);
+}
+
+/*****? End  Styles *****/
+
+
+/*****? OUR TEAM  Styles *****/
+.title  p.sub {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 14px;
+}
+
+.title  p.sub::after ,
+.title  p.sub::before{
+  content: "";
+  width: 0;
+  height: 0;
+}
+
+
+
+.picture .col{
+   position: relative;
+  overflow: hidden;
+   border-radius: 22px;
+ 
+}
+
+.picture .col img{
+    width: 100%;
+  height: 100%;
+  transition: 
+  filter 1s,
+  transform 1s;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+.picture .col:hover img{
+ filter: grayscale(0);
+  transform: scale(1.04);
+}
+
+.picture .col::after{
+   content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 55%);
+  pointer-events: none;
+}
+
+
+
+.member-info .role {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #c8ff1a;
+}
+
+.member-info .ach {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #fff;
+}
+.member-tag {
+  position: absolute;
+  z-index: 1;
+  right: 22px;
+  bottom: 28px;
+  writing-mode: vertical-rl;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  color: #cdfe1c;
+}
+
+.picture .col .member-info{
+    position: absolute;
+  inset: 0;
+  background-color: rgb(0, 0, 0, 0.423);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition:
+    opacity 1s,
+    transform 1s;
+  transform: translateY(100%);
+}
+.picture .col:hover .member-info{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*****? End OUR TEAM  Styles *****/
+
+/*****? Contact Us Styles *****/
+.contact{
+  background-color: #0e131e;
+  color: #fff;
+  }
+.contact .title {
+  text-align: center;
+}
+
+.contact .title p {
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 3.2px;
+  color: #c8ff1a;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+background-color: #1e2939;
+  border-radius: 22px;
+  padding: 40px;
+  min-height: 190px;
+}
+
+.info-ic {
+  flex: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+ background-color: #1e2939;
+  color: #0b1000;
+  display: grid;
+  place-items: center;
+  font-size: 1.9rem;
+}
+.info-card h3 {
+  font-size: 1.35rem;
+  margin: 0 0 6px;
+}
+.info-ic i{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0b0f17;
+  color: #cdfe1c ;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.info-card .ppp p{
+  color: #959dab;
+}
+
+.community {
+  background-color: #c8ff1a;
+
+  color: #0b1000;
+  border-radius: 22px;
+  padding: 40px;
+}
+
+.community h3{
+  color: #000;
+}
+
+.community a.dark{
+   width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #0b0f17;
+  color: #cdfe1c ;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+label,
+input {
+  display: block;
+}
+.form-group {
+  background-color: #1e2939;
+  border: 2px solid #262c38;
+  width: 50%;
+  margin: 50px auto;
+  padding: 10px;
+  border-radius: 8px;
+  
+}
+
+
+.form-group .main-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-group .form-label{
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.form-group .main-input,
+.form-group .form-select{
+    padding: 18px 22px;
+    background-color: #364153;
+  font-size: 1.05rem;
+  border-radius: 12px;
+   border: 1px solid #36425a;
+}
+
+.form-group .main-input,
+.form-group .form-select{
+    border-color: #cdfe1c;
+  box-shadow: 0 0 0 0.2rem rgba(200, 255, 26, 0.15);
+}
+
+.input:checked{
+  background-color: #36425a;
+}
+
+
+
+
+
+
+
+/*****? End Contact Us Styles *****/
